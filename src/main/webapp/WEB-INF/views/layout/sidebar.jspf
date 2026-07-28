@@ -1,0 +1,111 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
+<div class="w-64 bg-slate-900 text-white flex flex-col shadow-xl">
+
+	<!-- ====================================================== -->
+	<!-- LOGO -->
+	<!-- ====================================================== -->
+
+	<div class="p-6 border-b border-slate-700">
+
+		<h1 class="text-2xl font-bold text-emerald-400">
+
+			<i class="fa-solid fa-wallet mr-2"></i> Smart Expense Tracker
+
+		</h1>
+
+	</div>
+
+
+	<!-- ====================================================== -->
+	<!-- NAVIGATION -->
+	<!-- ====================================================== -->
+
+	<nav class="flex-1 p-4 space-y-2">
+
+
+		<!-- DASHBOARD -->
+
+		<a href="${pageContext.request.contextPath}/dashboard"
+			class="flex items-center gap-3 px-4 py-3 rounded-lg
+                  transition-all duration-200
+                  ${activePage eq 'dashboard'
+                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+
+			<i class="fa-solid fa-chart-line w-5 text-center"></i> <span
+			class="font-medium"> Dashboard </span>
+
+		</a>
+
+
+		<!-- EXPENSES -->
+
+		<a href="${pageContext.request.contextPath}/expenses"
+			class="flex items-center gap-3 px-4 py-3 rounded-lg
+                  transition-all duration-200
+                  ${activePage eq 'expenses'
+                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+
+			<i class="fa-solid fa-money-bill-wave w-5 text-center"></i> <span
+			class="font-medium"> Expenses </span>
+
+		</a>
+
+
+		<!-- BUDGET -->
+
+		<a href="${pageContext.request.contextPath}/budget"
+			class="flex items-center gap-3 px-4 py-3 rounded-lg
+                  transition-all duration-200
+                  ${activePage eq 'budget'
+                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+
+			<i class="fa-solid fa-piggy-bank w-5 text-center"></i> <span
+			class="font-medium"> Budget </span>
+
+		</a>
+
+
+		<!-- PROFILE -->
+
+		<a href="${pageContext.request.contextPath}/profile"
+			class="flex items-center gap-3 px-4 py-3 rounded-lg
+                  transition-all duration-200
+                  ${activePage eq 'profile'
+                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+
+			<i class="fa-solid fa-user w-5 text-center"></i> <span
+			class="font-medium"> Profile </span>
+
+		</a>
+
+	</nav>
+
+
+	<!-- ====================================================== -->
+	<!-- LOGOUT -->
+	<!-- ====================================================== -->
+
+	<div class="p-4 border-t border-slate-700">
+
+		<form action="${pageContext.request.contextPath}/logout" method="post">
+
+			<button type="submit"
+				class="w-full flex items-center gap-3 px-4 py-3
+                   rounded-lg bg-red-600 hover:bg-red-700
+                   text-white transition">
+
+				<i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+
+			</button>
+
+		</form>
+
+	</div>
+
+</div>

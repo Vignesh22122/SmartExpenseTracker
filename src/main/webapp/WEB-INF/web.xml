@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://jakarta.ee"
+         xmlns:xsi="http://w3.org"
+         xsi:schemaLocation="http://jakarta.ee http://jakarta.ee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>SmartExpenseTracker</display-name>
+
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.expensetracker.filter.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/dashboard</url-pattern>
+        <url-pattern>/expenses/*</url-pattern>
+        <url-pattern>/budget/*</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
