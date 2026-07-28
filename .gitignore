@@ -64,3 +64,6 @@ credentials.properties
 # Packaged application output
 # ==========================================
 *.war
+
+
+target/
