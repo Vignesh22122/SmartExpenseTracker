@@ -1,41 +1,194 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
-<div class="w-64 bg-slate-900 text-white flex flex-col shadow-xl">
 
-	<!-- ====================================================== -->
-	<!-- LOGO -->
-	<!-- ====================================================== -->
+<!-- ====================================================== -->
+<!-- MOBILE BACKDROP -->
+<!-- ====================================================== -->
 
-	<div class="p-6 border-b border-slate-700">
+<div id="sidebarBackdrop"
+	class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm
+	       z-40 hidden lg:hidden"
+	onclick="closeSidebar()">
+</div>
 
-		<h1 class="text-2xl font-bold text-emerald-400">
 
-			<i class="fa-solid fa-wallet mr-2"></i> Smart Expense Tracker
+<!-- ====================================================== -->
+<!-- MOBILE TOP BAR -->
+<!-- ====================================================== -->
 
-		</h1>
+<div
+	class="fixed top-0 left-0 right-0 z-30
+	       lg:hidden
+	       h-16
+	       bg-slate-900
+	       border-b border-slate-700
+	       shadow-md
+	       flex items-center justify-between
+	       px-4">
+
+	<!-- BRAND -->
+
+	<div class="flex items-center gap-3 min-w-0">
+
+		<div
+			class="w-9 h-9 rounded-lg
+			       bg-emerald-500/10
+			       flex items-center justify-center
+			       shrink-0">
+
+			<i class="fa-solid fa-wallet text-emerald-400"></i>
+
+		</div>
+
+		<div class="min-w-0">
+
+			<p
+				class="text-white text-sm
+				       font-bold leading-tight truncate">
+
+				Smart Expense Tracker
+
+			</p>
+
+		</div>
 
 	</div>
 
 
-	<!-- ====================================================== -->
-	<!-- NAVIGATION -->
-	<!-- ====================================================== -->
+	<!-- MENU BUTTON -->
 
-	<nav class="flex-1 p-4 space-y-2">
+	<button type="button"
+		onclick="openSidebar()"
+		class="w-10 h-10
+		       rounded-lg
+		       flex items-center justify-center
+		       text-slate-300
+		       hover:text-white
+		       hover:bg-slate-800
+		       transition"
+		aria-label="Open navigation menu">
+
+		<i class="fa-solid fa-bars text-xl"></i>
+
+	</button>
+
+</div>
+
+
+<!-- ====================================================== -->
+<!-- SIDEBAR -->
+<!-- ====================================================== -->
+
+<aside id="appSidebar"
+	class="fixed lg:relative
+	       inset-y-0 left-0
+	       z-50
+	       w-72 lg:w-64
+	       max-w-[85vw]
+	       bg-slate-900
+	       text-white
+	       flex flex-col
+	       shadow-2xl lg:shadow-xl
+	       shrink-0
+	       transform -translate-x-full lg:translate-x-0
+	       transition-transform duration-300 ease-in-out">
+
+
+	<!-- ================================================== -->
+	<!-- LOGO -->
+	<!-- ================================================== -->
+
+	<div
+		class="min-h-[96px]
+		       px-5 py-5
+		       border-b border-slate-700
+		       flex items-center justify-between gap-4">
+
+
+		<div class="flex items-center gap-3 min-w-0">
+
+			<div
+				class="w-10 h-10 rounded-xl
+				       bg-emerald-500/10
+				       flex items-center justify-center
+				       shrink-0">
+
+				<i
+					class="fa-solid fa-wallet
+					       text-emerald-400 text-xl"></i>
+
+			</div>
+
+
+			<div class="min-w-0">
+
+				<h1
+					class="text-lg lg:text-xl
+					       leading-tight font-bold
+					       text-emerald-400">
+
+					Smart Expense Tracker
+
+				</h1>
+
+			</div>
+
+		</div>
+
+
+		<!-- MOBILE CLOSE -->
+
+		<button type="button"
+			onclick="closeSidebar()"
+			class="lg:hidden
+			       w-9 h-9
+			       rounded-lg
+			       flex items-center justify-center
+			       text-slate-400
+			       hover:text-white
+			       hover:bg-slate-800
+			       transition
+			       shrink-0"
+			aria-label="Close navigation menu">
+
+			<i class="fa-solid fa-xmark text-xl"></i>
+
+		</button>
+
+	</div>
+
+
+	<!-- ================================================== -->
+	<!-- NAVIGATION -->
+	<!-- ================================================== -->
+
+	<nav
+		class="flex-1
+		       p-4
+		       space-y-2
+		       overflow-y-auto">
 
 
 		<!-- DASHBOARD -->
 
 		<a href="${pageContext.request.contextPath}/dashboard"
-			class="flex items-center gap-3 px-4 py-3 rounded-lg
-                  transition-all duration-200
-                  ${activePage eq 'dashboard'
-                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+			onclick="closeSidebar()"
+			class="flex items-center gap-3
+			       px-4 py-3
+			       rounded-lg
+			       transition-all duration-200
+			       ${activePage eq 'dashboard'
+			         ? 'bg-slate-800 text-emerald-400 shadow-sm'
+			         : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
 
-			<i class="fa-solid fa-chart-line w-5 text-center"></i> <span
-			class="font-medium"> Dashboard </span>
+			<i
+				class="fa-solid fa-chart-line
+				       w-5 text-center shrink-0"></i>
+
+			<span class="font-medium">
+				Dashboard
+			</span>
 
 		</a>
 
@@ -43,14 +196,22 @@
 		<!-- EXPENSES -->
 
 		<a href="${pageContext.request.contextPath}/expenses"
-			class="flex items-center gap-3 px-4 py-3 rounded-lg
-                  transition-all duration-200
-                  ${activePage eq 'expenses'
-                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+			onclick="closeSidebar()"
+			class="flex items-center gap-3
+			       px-4 py-3
+			       rounded-lg
+			       transition-all duration-200
+			       ${activePage eq 'expenses'
+			         ? 'bg-slate-800 text-emerald-400 shadow-sm'
+			         : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
 
-			<i class="fa-solid fa-money-bill-wave w-5 text-center"></i> <span
-			class="font-medium"> Expenses </span>
+			<i
+				class="fa-solid fa-money-bill-wave
+				       w-5 text-center shrink-0"></i>
+
+			<span class="font-medium">
+				Expenses
+			</span>
 
 		</a>
 
@@ -58,14 +219,22 @@
 		<!-- BUDGET -->
 
 		<a href="${pageContext.request.contextPath}/budget"
-			class="flex items-center gap-3 px-4 py-3 rounded-lg
-                  transition-all duration-200
-                  ${activePage eq 'budget'
-                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+			onclick="closeSidebar()"
+			class="flex items-center gap-3
+			       px-4 py-3
+			       rounded-lg
+			       transition-all duration-200
+			       ${activePage eq 'budget'
+			         ? 'bg-slate-800 text-emerald-400 shadow-sm'
+			         : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
 
-			<i class="fa-solid fa-piggy-bank w-5 text-center"></i> <span
-			class="font-medium"> Budget </span>
+			<i
+				class="fa-solid fa-piggy-bank
+				       w-5 text-center shrink-0"></i>
+
+			<span class="font-medium">
+				Budget
+			</span>
 
 		</a>
 
@@ -73,34 +242,61 @@
 		<!-- PROFILE -->
 
 		<a href="${pageContext.request.contextPath}/profile"
-			class="flex items-center gap-3 px-4 py-3 rounded-lg
-                  transition-all duration-200
-                  ${activePage eq 'profile'
-                    ? 'bg-slate-800 text-emerald-400 shadow-sm'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+			onclick="closeSidebar()"
+			class="flex items-center gap-3
+			       px-4 py-3
+			       rounded-lg
+			       transition-all duration-200
+			       ${activePage eq 'profile'
+			         ? 'bg-slate-800 text-emerald-400 shadow-sm'
+			         : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
 
-			<i class="fa-solid fa-user w-5 text-center"></i> <span
-			class="font-medium"> Profile </span>
+			<i
+				class="fa-solid fa-user
+				       w-5 text-center shrink-0"></i>
+
+			<span class="font-medium">
+				Profile
+			</span>
 
 		</a>
 
 	</nav>
 
 
-	<!-- ====================================================== -->
+	<!-- ================================================== -->
 	<!-- LOGOUT -->
-	<!-- ====================================================== -->
+	<!-- ================================================== -->
 
-	<div class="h-[92px] p-4 border-t border-slate-700 flex items-center">
+	<div
+		class="min-h-[92px]
+		       p-4
+		       border-t border-slate-700
+		       flex items-center">
 
-		<form action="${pageContext.request.contextPath}/logout" method="post">
+		<form
+			action="${pageContext.request.contextPath}/logout"
+			method="post"
+			class="w-full">
 
 			<button type="submit"
-				class="w-full flex items-center gap-3 px-4 py-3
-                   rounded-lg bg-red-600 hover:bg-red-700
-                   text-white transition">
+				class="w-full
+				       flex items-center gap-3
+				       px-4 py-3
+				       rounded-lg
+				       bg-red-600
+				       hover:bg-red-700
+				       text-white
+				       font-medium
+				       transition">
 
-				<i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+				<i
+					class="fa-solid fa-right-from-bracket
+					       w-5 text-center"></i>
+
+				<span>
+					Logout
+				</span>
 
 			</button>
 
@@ -108,4 +304,117 @@
 
 	</div>
 
-</div>
+</aside>
+
+
+<!-- ====================================================== -->
+<!-- MOBILE SIDEBAR SCRIPT -->
+<!-- ====================================================== -->
+
+<script>
+
+	function openSidebar() {
+
+		const sidebar =
+			document.getElementById("appSidebar");
+
+		const backdrop =
+			document.getElementById("sidebarBackdrop");
+
+
+		if (!sidebar || !backdrop) {
+			return;
+		}
+
+
+		sidebar.classList.remove("-translate-x-full");
+
+		backdrop.classList.remove("hidden");
+
+		document.body.classList.add("sidebar-open");
+	}
+
+
+	function closeSidebar() {
+
+		/*
+		 * On desktop the sidebar must remain visible.
+		 */
+		if (window.innerWidth >= 1024) {
+			return;
+		}
+
+
+		const sidebar =
+			document.getElementById("appSidebar");
+
+		const backdrop =
+			document.getElementById("sidebarBackdrop");
+
+
+		if (!sidebar || !backdrop) {
+			return;
+		}
+
+
+		sidebar.classList.add("-translate-x-full");
+
+		backdrop.classList.add("hidden");
+
+		document.body.classList.remove("sidebar-open");
+	}
+
+
+	/*
+	 * Escape closes mobile navigation.
+	 */
+	document.addEventListener("keydown", function(event) {
+
+		if (event.key === "Escape") {
+
+			closeSidebar();
+
+		}
+
+	});
+
+
+	/*
+	 * Restore correct state when switching between
+	 * mobile and desktop widths.
+	 */
+	window.addEventListener("resize", function() {
+
+		const sidebar =
+			document.getElementById("appSidebar");
+
+		const backdrop =
+			document.getElementById("sidebarBackdrop");
+
+
+		if (!sidebar || !backdrop) {
+			return;
+		}
+
+
+		if (window.innerWidth >= 1024) {
+
+			sidebar.classList.remove("-translate-x-full");
+
+			backdrop.classList.add("hidden");
+
+			document.body.classList.remove("sidebar-open");
+
+		} else {
+
+			sidebar.classList.add("-translate-x-full");
+
+			backdrop.classList.add("hidden");
+
+			document.body.classList.remove("sidebar-open");
+
+		}
+
+	});
+
+</script>

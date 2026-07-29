@@ -49,6 +49,13 @@
             <artifactId>mysql-connector-j</artifactId>
             <version>9.7.0</version>
         </dependency>
+        
+        <!-- HikariCP JDBC Connection Pool -->
+		<dependency>
+		    <groupId>com.zaxxer</groupId>
+		    <artifactId>HikariCP</artifactId>
+		    <version>6.3.0</version>
+		</dependency>
 
     </dependencies>
 

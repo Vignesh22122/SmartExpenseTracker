@@ -4,7 +4,7 @@
 <%@ include file="/WEB-INF/views/layout/header.jspf"%>
 <%@ include file="/WEB-INF/views/layout/sidebar.jspf"%>
 
-<div class="flex-1 overflow-y-auto bg-slate-50 min-h-screen">
+<div class="flex-1 min-w-0 overflow-y-auto bg-slate-50 min-h-screen pt-16 lg:pt-0">
 
 	<!-- ====================================================== -->
 	<!-- PROFILE HEADER -->
