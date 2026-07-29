@@ -69,6 +69,13 @@ https://smartexpensetracker-3iye.onrender.com
 
 ## Screenshots
 
+### Login
+
+![Login Page](screenshots/Login.jpg)
+
+### Registration
+
+![Registration Page](screenshots/Registration.jpg)
 ### Dashboard
 
 ![Smart Expense Tracker Dashboard](screenshots/Dashboard.jpg)
@@ -84,14 +91,6 @@ https://smartexpensetracker-3iye.onrender.com
 ### User Profile
 
 ![User Profile](screenshots/Profile.jpg)
-
-### Login
-
-![Login Page](screenshots/Login.jpg)
-
-### Registration
-
-![Registration Page](screenshots/Registration.jpg)
 
 ---
 
