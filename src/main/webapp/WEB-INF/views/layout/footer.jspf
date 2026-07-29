@@ -1,0 +1,78 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
+<footer class="h-[92px] bg-slate-950 border-t border-slate-700">
+
+    <div class="h-full px-8">
+
+        <div class="max-w-[1600px] mx-auto h-full
+                    flex items-center justify-between gap-6">
+
+            <!-- COPYRIGHT / CREATOR -->
+            <div>
+
+                <p class="text-sm text-slate-300 leading-5">
+                    &copy; 2026
+                    <span class="font-semibold text-white">
+                        Smart Expense Tracker
+                    </span>
+                </p>
+
+                <p class="text-sm text-slate-300 mt-1 leading-5">
+                    Designed &amp; Developed by
+                    <span class="font-semibold text-emerald-400">
+                        Vignesh Konagari
+                    </span>
+                </p>
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
+            <div class="flex items-center gap-4">
+
+                <a href="https://github.com/Vignesh22122"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="GitHub"
+                   class="inline-flex items-center gap-2
+                          px-3 py-2 rounded-lg
+                          text-slate-300
+                          hover:text-white
+                          hover:bg-white/10
+                          transition-all duration-200">
+
+                    <i class="fa-brands fa-github text-lg"></i>
+
+                    <span class="text-sm font-semibold">
+                        GitHub
+                    </span>
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/in/konagarivignesh"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn"
+                   class="inline-flex items-center gap-2
+                          px-3 py-2 rounded-lg
+                          text-slate-300
+                          hover:text-white
+                          hover:bg-white/10
+                          transition-all duration-200">
+
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+
+                    <span class="text-sm font-semibold">
+                        LinkedIn
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>

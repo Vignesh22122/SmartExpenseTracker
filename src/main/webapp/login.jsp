@@ -8,8 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Smart Expense Tracker</title>
-
-
+    <link rel="icon"
+      type="image/png"
+      href="${pageContext.request.contextPath}/images/wallet-favicon.png">
 <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
@@ -21,18 +22,15 @@
     <!-- Header -->
     <div class="text-center mb-7">
 
-        <div class="inline-flex items-center justify-center w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 class="w-7 h-7"
-                 fill="none"
-                 viewBox="0 0 24 24"
-                 stroke="currentColor"
-                 stroke-width="2">
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-        </div>
+        <div class="inline-flex items-center justify-center
+            w-14 h-14
+            bg-emerald-100 text-emerald-600
+            rounded-full mb-4">
+
+		    <span class="text-3xl font-bold leading-none">
+		        ₹
+		    </span>
+		</div>
 
         <h1 class="text-2xl font-bold text-slate-900">
             Welcome Back
@@ -210,7 +208,6 @@
     </form>
 
 </div>
-
 
 <!-- Password Visibility Script -->
 <script>

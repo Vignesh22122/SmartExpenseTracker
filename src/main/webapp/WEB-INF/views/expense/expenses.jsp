@@ -526,7 +526,7 @@
         </c:if>
 
     </div>
-
+	<%@ include file="/WEB-INF/views/layout/footer.jspf"%>
 </div>
 
 </body>
